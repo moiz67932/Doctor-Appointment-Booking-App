@@ -53,3 +53,10 @@
         @apply text-[16px] leading-7 mt-3 ;
     }
 }
+
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /*Make scrollbar invisible */
+  }
+  

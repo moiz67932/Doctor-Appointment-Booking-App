@@ -14,12 +14,12 @@ const Routers = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/" element={<Home />} />
-      <Route path="/doctor" element={<Doctors />} />
-      <Route path="/doctor/" element={<DoctorDetails />} />
-      <Route path="/" element={<Login />} />
-      <Route path="/" element={<Signup />} />
-      <Route path="/" element={<Contact />} />
-      <Route path="/" element={<Services />} />
+      <Route path="/team" element={<Doctors />} />
+      <Route path="/team/" element={<DoctorDetails />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/services" element={<Services />} />
     </Routes>
   );
 };

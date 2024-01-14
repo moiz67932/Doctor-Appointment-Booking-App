@@ -29,15 +29,11 @@ const Home = () => {
 
             <div>
               <div className="lg:w-[570px]">
-                {" "}
                 <h1 className="text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px] md:leading-[70px]">
                   We help patients live a healthy, longer life.
                 </h1>
                 <p className="text_para">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Natus quaerat cumque fugit, perspiciatis cum nemo aperiam, aut
-                  quia earum amet architecto, modi odio. Soluta unde ducimus
-                  perferendis?
+                Medicare provides state-of-the-art care with hands-on service and transparent pricing, all from an award-winning space in the heart of San Francisco.
                 </p>
                 <button className="btn">Request an Appointment</button>
               </div>
@@ -91,7 +87,6 @@ const Home = () => {
         <div className="container">
           <div className="lg:w-[470px] mx-auto">
             <h2 className="heading text-center">
-              {" "}
               Providing the best medical services
             </h2>
             <p className="text_para text-center">
@@ -107,10 +102,9 @@ const Home = () => {
               </div>
               <div className="mt-[30px] ">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">
-                  Find a Doctor
+                  Our Team
                 </h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] text-center">
-                  {" "}
                   World-class care for everyone. Our health System offers
                   unmatched, expert health care. From the lab to the clinic.
                 </p>
@@ -128,7 +122,7 @@ const Home = () => {
               </div>
               <div className="mt-[30px] ">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">
-                  Find a Location
+                  Find Our Location
                 </h2>
                 <p className="text-[16px] leading-7 text-textColor font-[400] text-center">
                   {" "}
