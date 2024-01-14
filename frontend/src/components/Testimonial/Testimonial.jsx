@@ -5,10 +5,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import patientAvatar from "../../assets/images/patient-avatar.png";
 import { HiStar } from "react-icons/hi";
+import { staggerContainer, zoomIn } from "../../utils/motion";
+import { motion } from "framer-motion";
 
 const Testimonial = () => {
   return (
-    <div className="mt-[30px] lg:mt-[55px]">
+    <motion.div className="mt-[30px] lg:mt-[55px]">
       <Swiper
         modules={[Pagination]}
         spaceBetween={30}
@@ -30,105 +32,125 @@ const Testimonial = () => {
         }}
       >
         <SwiperSlide>
-          <div className="py-[30px] px-5 rounded-3">
-            <div className="flex items-center gap-[13px]">
-              <img src={patientAvatar} alt="" />
-              <div>
-                <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                  Muhibur Rahman
-                </h4>
-                <div className="flex items-center gap-[2px]">
-                  <HiStar className="text-yellowColor w-[18px] h-5" />
-                  <HiStar className="text-yellowColor w-[18px] h-5" />
-                  <HiStar className="text-yellowColor w-[18px] h-5" />
-                  <HiStar className="text-yellowColor w-[18px] h-5" />
-                  <HiStar className="text-yellowColor w-[18px] h-5" />
-                </div>
-              </div>
-            </div>
-            <p
-              className="text-[16px] leading-7 mt-4 text-textColor font-[400]"
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="py-[30px] px-5 rounded-3"
+              variants={zoomIn(0.3, 1)}
             >
-              `I have taken medical services from them. They treat so well and
-              they are provding the best medical services.`
-            </p>
-          </div>
+              <motion.div className="flex items-center gap-[13px]">
+                <img src={patientAvatar} alt="" />
+                <motion.div>
+                  <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
+                    Muhammad Moiz
+                  </h4>
+                  <motion.div className="flex items-center gap-[2px]">
+                    <HiStar className="text-yellowColor w-[18px] h-5" />
+                    <HiStar className="text-yellowColor w-[18px] h-5" />
+                    <HiStar className="text-yellowColor w-[18px] h-5" />
+                    <HiStar className="text-yellowColor w-[18px] h-5" />
+                    <HiStar className="text-yellowColor w-[18px] h-5" />
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+              <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
+                `I have taken medical services from them. They treat so well and
+                they are provding the best medical services.`
+              </p>
+            </motion.div>
+          </motion.div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="py-[30px] px-5 rounded-3">
-            <div className="flex items-center gap-[13px]">
+        <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+          <motion.div className="py-[30px] px-5 rounded-3"
+          variants={zoomIn(0.3, 1)}>
+            <motion.div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
-              <div>
+              <motion.div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                  Muhibur Rahman
+                  Muhammad Moiz
                 </h4>
-                <div className="flex items-center gap-[2px]">
+                <motion.div className="flex items-center gap-[2px]">
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
-                </div>
-              </div>
-            </div>
-            <p
-              className="text-[16px] leading-7 mt-4 text-textColor font-[400]"
-            >
+                </motion.div>
+              </motion.div>
+            </motion.div>
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
               `I have taken medical services from them. They treat so well and
               they are provding the best medical services.`
             </p>
-          </div>
-        </SwiperSlide><SwiperSlide>
-          <div className="py-[30px] px-5 rounded-3">
-            <div className="flex items-center gap-[13px]">
+          </motion.div>
+          </motion.div>
+        </SwiperSlide>
+        <SwiperSlide>
+        <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+          >
+          <motion.div className="py-[30px] px-5 rounded-3"
+          variants={zoomIn(0.3, 1)}>
+            <motion.div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
-              <div>
+              <motion.div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                  Muhibur Rahman
+                  Muhammad Moiz
                 </h4>
-                <div className="flex items-center gap-[2px]">
+                <motion.div className="flex items-center gap-[2px]">
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
-                </div>
-              </div>
-            </div>
-            <p
-              className="text-[16px] leading-7 mt-4 text-textColor font-[400]"
-            >
+                </motion.div>
+              </motion.div>
+            </motion.div>
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
               `I have taken medical services from them. They treat so well and
               they are provding the best medical services.`
             </p>
-          </div>
-        </SwiperSlide><SwiperSlide>
-          <div className="py-[30px] px-5 rounded-3">
-            <div className="flex items-center gap-[13px]">
+          </motion.div>
+          </motion.div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <motion.div className="py-[30px] px-5 rounded-3">
+            <motion.div className="flex items-center gap-[13px]">
               <img src={patientAvatar} alt="" />
-              <div>
+              <motion.div>
                 <h4 className="text-[18px] leading-[30px] font-semibold text-headingColor">
-                  Muhibur Rahman
+                  Muhammad Moiz
                 </h4>
-                <div className="flex items-center gap-[2px]">
+                <motion.div className="flex items-center gap-[2px]">
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
                   <HiStar className="text-yellowColor w-[18px] h-5" />
-                </div>
-              </div>
-            </div>
-            <p
-              className="text-[16px] leading-7 mt-4 text-textColor font-[400]"
-            >
+                </motion.div>
+              </motion.div>
+            </motion.div>
+            <p className="text-[16px] leading-7 mt-4 text-textColor font-[400]">
               `I have taken medical services from them. They treat so well and
               they are provding the best medical services.`
             </p>
-          </div>
+          </motion.div>
         </SwiperSlide>
       </Swiper>
-    </div>
+    </motion.div>
   );
 };
 

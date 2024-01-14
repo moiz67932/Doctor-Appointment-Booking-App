@@ -16,6 +16,9 @@ import ServiceList from "../components/Services/ServiceList";
 import DoctorList from "../components/Doctors/DoctorList";
 import FaqList from "../components/Faq/FaqList";
 import Testimonial from "../components/Testimonial/Testimonial";
+import { InlineWidget, PopupButton, PopupWidget } from "react-calendly";
+import { fadeIn, slideIn, staggerContainer, zoomIn } from "../utils/motion";
+import { motion } from "framer-motion";
 
 const Home = () => {
   return (
@@ -23,143 +26,188 @@ const Home = () => {
       {/* HERO SECTION */}
 
       <section className="hero__section pt-[60px] 2xl:h-[800px]">
-        <div className="container">
-          <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
+        <motion.div
+          className="container"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.25 }}
+        >
+          <motion.div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
             {/* HERO CONTENT */}
 
-            <div>
-              <div className="lg:w-[570px]">
-                <h1 className="text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px] md:leading-[70px]">
+            <motion.div>
+              <motion.div className="lg:w-[570px]">
+                <motion.h1
+                  className="text-[36px] leading-[46px] text-headingColor font-[800] md:text-[60px] md:leading-[70px]"
+                  variants={fadeIn("up", "tween", 0.1, 1, 7)}
+                >
                   We help patients live a healthy, longer life.
-                </h1>
-                <p className="text_para">
-                Medicare provides state-of-the-art care with hands-on service and transparent pricing, all from an award-winning space in the heart of San Francisco.
-                </p>
-                <button className="btn">Request an Appointment</button>
-              </div>
+                </motion.h1>
+                <motion.p
+                  className="text_para"
+                  variants={fadeIn("right", "tween", 0.2, 1, 0)}
+                >
+                  Medicare provides state-of-the-art care with hands-on service
+                  and transparent pricing, all from an award-winning space in
+                  the heart of San Francisco.
+                </motion.p>
+
+                <PopupButton
+                  url="https://calendly.com/moiz67932/2-hour-appointment"
+                  rootElement={document.getElementById("root")}
+                  text={
+                    <motion.button
+                      className="btn"
+                      variants={fadeIn("up", "tween", 0.2, 1, 10)}
+                    >
+                      Request An Appointment
+                    </motion.button>
+                  }
+                />
+              </motion.div>
 
               {/* hero counter */}
 
-              <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
-                <div>
+              <motion.div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5 lg:gap-[30px]">
+                <motion.div variants={zoomIn(0.1, 1)}>
                   <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
                     30+
                   </h2>
                   <span className="w-[100px] h-2 bg-yellowColor rounded-full block mt-[-14px] "></span>{" "}
-                  <p className="text_para">Years of Experience</p>{" "}
-                </div>
-                <div>
+                  <motion.p className="text_para">Years of Experience</motion.p>{" "}
+                </motion.div>
+                <motion.div variants={zoomIn(0.3, 1)}>
                   <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
                     15+
                   </h2>
                   <span className="w-[100px] h-2 bg-purpleColor rounded-full block mt-[-14px]"></span>{" "}
-                  <p className="text_para">Clinic Location</p>
-                </div>
-                <div>
+                  <motion.p className="text_para">Clinic Location</motion.p>
+                </motion.div>
+                <motion.div variants={zoomIn(0.6, 1)}>
                   <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">
                     100%
                   </h2>
                   <span className="w-[100px] h-2 bg-irisBlueColor rounded-full block mt-[-14px]"></span>{" "}
-                  <p className="text_para">Patient Satisfaction</p>
-                </div>
-              </div>
-            </div>
+                  <motion.p className="text_para">
+                    Patient Satisfaction
+                  </motion.p>
+                </motion.div>
+              </motion.div>
+            </motion.div>
 
             {/* HERO CONTENT */}
 
-            <div className="flex gap-[30px] justify-end">
-              {" "}
-              <div>
+            <motion.div className="flex gap-[30px] justify-end">
+              <motion.div variants={fadeIn("up", "tween", 0.2, 1, 5)}>
                 <img className="w-full" src={heroImg01} alt="" />
-              </div>
-              <div className="mt-[30px]">
+              </motion.div>
+              <motion.div
+                className="mt-[30px]"
+                variants={fadeIn("up", "tween", 0.2, 1, 5)}
+              >
                 <img src={heroImg02} alt="" className="w-full mb-[30px]" />
                 <img src={heroImg03} alt="" className="w-full" />
-              </div>
-            </div>
-          </div>
-        </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* HERO SECTION END */}
 
       <section>
-        <div className="container">
-          <div className="lg:w-[470px] mx-auto">
-            <h2 className="heading text-center">
-              Providing the best medical services
-            </h2>
-            <p className="text_para text-center">
-              World-class care for everyone. Our health System offers unmatched,
-              expert health care.
-            </p>
-          </div>
+        <motion.div
+          className="container"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.div className="lg:w-[470px] mx-auto">
+            <motion.div variants={fadeIn("up", "tween", 0.2, 1, 5)}>
+              <h2 className="heading text-center">
+                Providing the best medical services
+              </h2>
+            </motion.div>
+            <motion.div variants={fadeIn("up", "tween", 0.3, 1, 5)}>
+              <motion.p className="text_para text-center">
+                World-class care for everyone. Our health System offers
+                unmatched, expert health care.
+              </motion.p>
+            </motion.div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]">
-            <div className="py-[30px] px-5 ">
-              <div className="flex items-center justify-center">
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-[30px] mt-[30px] lg:mt-[55px]">
+            <motion.div className="py-[30px] px-5 " variants={zoomIn(0.4, 1)}>
+              <motion.div className="flex items-center justify-center">
                 <img src={icon01} alt="" />
-              </div>
-              <div className="mt-[30px] ">
+              </motion.div>
+              <motion.div className="mt-[30px] ">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">
                   Our Team
                 </h2>
-                <p className="text-[16px] leading-7 text-textColor font-[400] text-center">
+                <motion.p className="text-[16px] leading-7 text-textColor font-[400] text-center">
                   World-class care for everyone. Our health System offers
                   unmatched, expert health care. From the lab to the clinic.
-                </p>
+                </motion.p>
                 <Link
-                  to="/doctors"
+                  to="/team"
                   className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none"
                 >
                   <BsArrowRight className="group-hover:text-white w-6 h-5" />
                 </Link>
-              </div>
-            </div>
-            <div className="py-[30px] px-5 ">
-              <div className="flex items-center justify-center">
-                <img src={icon02} alt="" />
-              </div>
-              <div className="mt-[30px] ">
-                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">
-                  Find Our Location
-                </h2>
-                <p className="text-[16px] leading-7 text-textColor font-[400] text-center">
-                  {" "}
-                  World-class care for everyone. Our health System offers
-                  unmatched, expert health care. From the lab to the clinic.
-                </p>
-                <Link
-                  to="/doctors"
-                  className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none"
-                >
-                  <BsArrowRight className="group-hover:text-white w-6 h-5" />
-                </Link>
-              </div>
-            </div>
-            <div className="py-[30px] px-5 ">
-              <div className="flex items-center justify-center">
+              </motion.div>
+            </motion.div>
+            <motion.div className="py-[30px] px-5 " variants={zoomIn(0.9, 1)}>
+              <motion.div className="flex items-center justify-center">
                 <img src={icon03} alt="" />
-              </div>
-              <div className="mt-[30px] ">
+              </motion.div>
+              <motion.div className="mt-[30px] ">
                 <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">
                   Book An Appointment
                 </h2>
-                <p className="text-[16px] leading-7 text-textColor font-[400] text-center">
+                <motion.p className="text-[16px] leading-7 text-textColor font-[400] text-center">
                   {" "}
                   World-class care for everyone. Our health System offers
                   unmatched, expert health care. From the lab to the clinic.
-                </p>
+                </motion.p>
                 <Link
-                  to="/doctors"
+                  to="#"
+                  className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none"
+                >
+                  <PopupButton
+                    url="https://calendly.com/moiz67932/2-hour-appointment"
+                    rootElement={document.getElementById("root")}
+                    text={
+                      <BsArrowRight className="group-hover:text-white w-6 h-5" />
+                    }
+                  />
+                </Link>
+              </motion.div>
+            </motion.div>
+            <motion.div className="py-[30px] px-5 " variants={zoomIn(1.4, 1)}>
+              <motion.div className="flex items-center justify-center">
+                <img src={icon02} alt="" />
+              </motion.div>
+              <motion.div className="mt-[30px] ">
+                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">
+                  Find Our Location
+                </h2>
+                <motion.p className="text-[16px] leading-7 text-textColor font-[400] text-center">
+                  World-class care for everyone. Our health System offers
+                  unmatched, expert health care. From the lab to the clinic.
+                </motion.p>
+                <Link
+                  to="#"
                   className="w-[44px] h-[44px] rounded-full border border-solid border-[#181A1E] mt-[30px] mx-auto flex items-center justify-center group hover:bg-primaryColor hover:border-none"
                 >
                   <BsArrowRight className="group-hover:text-white w-6 h-5" />
                 </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
       <About />
@@ -167,31 +215,34 @@ const Home = () => {
       {/* SERVICE SECTION */}
 
       <section>
-        <div className="container">
-          <div className="xl:w-[470px] mx-auto">
+        <motion.div className="container">
+          <motion.div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">Our medical services</h2>
-            <p className="text_para text-center">
+            <motion.p className="text_para text-center">
               World-class care for everyone. Our health System offers unmatched,
               expert health care.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
           <ServiceList />
-        </div>
-        
+        </motion.div>
       </section>
-
-      
 
       {/* SERVICE SECTION END */}
 
       {/* FEATURE SECTION */}
 
       <section>
-        <div className="container">
-          <div className="flex items-center justify-between flex-col lg:flex-row">
+        <motion.div
+          className="container"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.div className="flex items-center justify-between flex-col lg:flex-row">
             {/* FEATURE CONTENT */}
 
-            <div className="xl:w-[670px]">
+            <motion.div className="xl:w-[670px]">
               <h2 className="heading">
                 Get virtual treatment <br />
                 anytime.
@@ -208,44 +259,56 @@ const Home = () => {
                   online scheduling tool to select an appointment time.
                 </li>
               </ul>
-
-              <Link to="/">
-                <button className="btn">Learn More</button>
-              </Link>
-            </div>
+              <PopupButton
+                url="https://calendly.com/moiz67932/2-hour-appointment"
+                rootElement={document.getElementById("root")}
+                text={
+                  <Link to="/">
+                    <motion.button
+                      className="btn"
+                      variants={fadeIn("up", "tween", 0.75, 1, 20)}
+                    >
+                      Book Now
+                    </motion.button>
+                  </Link>
+                }
+              />
+            </motion.div>
 
             {/* FEATURE IMG */}
-            <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
-              {" "}
+            <motion.div
+              className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0"
+              variants={fadeIn("left", "tween", 0.2, 1, 5)}
+            >
               <img src={featureImg} className="w-3/4" alt="" />
-              <div className="w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-[6px] lg:gap-3">
-                    <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600] ">
+              <motion.div className="w-[150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-[100px] md:left-5 z-20 p-2 pb-3 lg:pt-4 lg:px-4 lg:pb-[26px] rounded-[10px]">
+                <motion.div className="flex items-center justify-between">
+                  <motion.div className="flex items-center gap-[6px] lg:gap-3">
+                    <motion.p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-headingColor font-[600] ">
                       Tue, 24
-                    </p>
-                    <p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor font-[400]">
+                    </motion.p>
+                    <motion.p className="text-[10px] leading-[10px] lg:text-[14px] lg:leading-5 text-textColor font-[400]">
                       10:00
-                    </p>
-                  </div>
+                    </motion.p>
+                  </motion.div>
                   <span className="w-5 h-5 lg:w-[34px] lg:h-[34px] flex items-center justify-center bg-yellowColor rounded py-1 px-[6px] lg:py-3 lg:px-[9px]">
                     <img src={videoIcon} alt="" />
                   </span>
-                </div>
+                </motion.div>
 
-                <div className="w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full">
+                <motion.div className="w-[65px] lg:w-[96px] bg-[#CCF0F3] py-1 px-2 lg:py-[6px] lg:px-[10px] text-[8px] leading-[8px] lg:text-[12px] lg:leading-4 text-irisBlueColor font-[500] mt-2 lg:mt-4 rounded-full">
                   Consultation
-                </div>
-                <div className="flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]">
+                </motion.div>
+                <motion.div className="flex items-center gap-[6px] lg:gap-[10px] mt-2 lg:mt-[18px]">
                   <img src={avatarIcon} alt="" />
                   <h4 className="text-[10px] leading-3 lg:text-[16px] lg:leading-[22px] font-[700] text-headingColor">
                     Wayne Collins
                   </h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* FEATURE SECTION END */}
@@ -253,17 +316,17 @@ const Home = () => {
       {/* OUR GREAT DOCTORS */}
 
       <section>
-        <div className="container">
-          <div className="xl:w-[470px] mx-auto">
-            <h2 className="heading text-center">Our great doctors</h2>
-            <p className="text_para text-center">
+        <motion.div className="container">
+          <motion.div className="xl:w-[470px] mx-auto">
+            <h2 className="heading text-center">Our Great Doctors</h2>
+            <motion.p className="text_para text-center">
               World-class care for everyone. Our health System offers unmatched,
               expert health care.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
 
           <DoctorList />
-        </div>
+        </motion.div>
       </section>
 
       {/* OUR GREAT DOCTORS END */}
@@ -271,35 +334,47 @@ const Home = () => {
       {/* FAQ ITEM LIST */}
 
       <section>
-        <div className="container">
-          <div className="flex justify-between gap-[50px] lg:gap-0">
-            <div className="w-1/2 hidden md:block">
+        <motion.div
+          className="container"
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
+          <motion.div className="flex justify-between gap-[50px] lg:gap-0">
+            <motion.div
+              className="w-1/2 hidden md:block"
+              variants={fadeIn("up", "tween", 0.4, 1, 5)}
+            >
               <img src={faqImg} alt="" />
-            </div>
-            <div className="w-full md:w-1/2">
+            </motion.div>
+            <motion.div
+              className="w-full md:w-1/2"
+              variants={fadeIn("right", "tween", 0.4, 1, 5)}
+            >
               <h2 className="heading">
                 Most questions by our beloved patients
               </h2>
               <FaqList />
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* FAQ ITEM LIST END */}
 
       {/* TESTIMONIALS */}
       <section>
-        <div className="container">
-          <div className="xl:w-[470px] mx-auto">
+        <motion.div className="container">
+          <motion.div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">What our patient say</h2>
-            <p className="text_para text-center">
+            <motion.p className="text_para text-center">
               World-class care for everyone. Our health System offers unmatched,
               expert health care.
-            </p>
-          </div>
-          <Testimonial/>
-        </div>
+            </motion.p>
+          </motion.div>
+          <Testimonial />
+        </motion.div>
       </section>
       {/* TESTIMONIALS END */}
     </>

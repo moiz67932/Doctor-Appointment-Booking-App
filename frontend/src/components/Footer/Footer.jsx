@@ -10,29 +10,29 @@ import {
 
 const socialLinks = [
   {
-    path: "https://www.youtube.com/c/CodingWithMuhib",
+    path: "#",
     icon: <AiFillYoutube className="group-hover:text-white w-4 h-5" />,
   },
   {
-    path: "https://github.com/codingwithmuhib",
+    path: "#",
     icon: <AiFillGithub className="group-hover:text-white w-4 h-5" />,
   },
   {
-    path: "https://www.instagram.com/muhib160.official/",
+    path: "https://www.instagram.com/moiz093/",
     icon: <AiOutlineInstagram className="group-hover:text-white w-4 h-5" />,
   },
   {
-    path: "https://www.linkedin.com/in/codingwithmuhib/",
+    path: "https://www.linkedin.com/in/muhammad-moiz-15b086212/",
     icon: <RiLinkedinFill className="group-hover:text-white w-4 h-5" />,
   },
 ];
 const quickLinks01 = [
   {
-    path: "/home",
+    path: "/",
     display: "Home",
   },
   {
-    path: "/",
+    path: "/team",
     display: "About Us",
   },
   {
@@ -47,7 +47,7 @@ const quickLinks01 = [
 
 const quickLinks02 = [
   {
-    path: "/find-a-doctor",
+    path: "/",
     display: "Find a Doctor",
   },
   {
@@ -84,13 +84,14 @@ const Footer = () => {
           <div>
             <img src={logo} alt="" />
             <p className="text-[16px] leading-7 font-[400] text-textColor mt-4">
-              Copyright © {year} developed by Muhibur Rahman all right reserved.
+              Copyright © {year} developed by Muhammad Moiz all right reserved.
             </p>
             <div className="flex items-center gap-3 mt-4">
               {socialLinks.map((link, index) => (
                 <Link
                   to={link.path}
                   key={index}
+                  target="_blank"
                   className="w-9 h-9 border border-solid border-[#181A1E] rounded-full flex items-center justify-center group hover:bg-primaryColor hover:border-none"
                 >
                   {link.icon}

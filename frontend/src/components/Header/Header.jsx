@@ -4,7 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import userImg from "../../assets/images/avatar-icon.png";
 import { BiMenu } from "react-icons/bi";
 import "../../App.css";
-
+import { PopupButton } from "react-calendly";
 
 const navLinks = [
   {
@@ -46,24 +46,19 @@ const Header = () => {
     return window.removeEventListener("scroll", handleStickyHeader);
   });
 
-  const toggleMenu = ()=>menuRef.current.classList.toggle('show_menu');
+  const toggleMenu = () => menuRef.current.classList.toggle("show_menu");
 
   return (
-    <header className="header flex items-center" ref={headerRef} >
+    <header className="header flex items-center" ref={headerRef}>
       <div className="container">
         <div className="flex items-center justify-between">
-
-
           {/* LOGO */}
-
 
           <div className="">
             <img src={logo} alt="" />
           </div>
 
-
           {/* MENU */}
-
 
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="menu flex items-center gap-[2.7rem]">
@@ -84,11 +79,7 @@ const Header = () => {
             </ul>
           </div>
 
-
-
           {/* RIGHT NAVBAR */}
-
-
 
           <div className="flex items-center gap-4">
             <div className="hidden">
@@ -99,11 +90,18 @@ const Header = () => {
                 </figure>
               </Link>
             </div>
-            <Link to="/login">
-              <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
-                Book Online
-              </button>
-            </Link>
+            <PopupButton
+              url="https://calendly.com/moiz67932/2-hour-appointment"
+              rootElement={document.getElementById("root")}
+              text={
+                <Link to="#">
+                  <button className="bg-primaryColor py-2 px-6 text-white font-[600] h-[44px] flex items-center justify-center rounded-[50px]">
+                    Book Online
+                  </button>
+                </Link>
+              }
+            />
+
             <span className="md:hidden" onClick={toggleMenu}>
               <BiMenu className="w-6 h-6 cursor-pointer" />
             </span>
